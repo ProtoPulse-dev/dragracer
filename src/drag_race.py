@@ -199,11 +199,14 @@ tft = ST7735S(spi,
               cs=machine.Pin(TFT_CS, machine.Pin.OUT, value=1),
               dc=machine.Pin(TFT_RS, machine.Pin.OUT, value=0),
               rst=machine.Pin(TFT_RST, machine.Pin.OUT, value=1),
-              bl=machine.Pin(TFT_BL, machine.Pin.OUT,
-                             value=0 if BL_ACTIVE_HIGH else 1),
+              bl=None,
               width=PANEL_WIDTH, height=PANEL_HEIGHT,
               xstart=PANEL_XSTART, ystart=PANEL_YSTART,
               rotation=PANEL_ROTATION)
+
+# Backlight: the ST7735S driver no longer manages this pin, so set it
+# explicitly here.  Active-low: 0 = on.
+backlight = machine.Pin(TFT_BL, machine.Pin.OUT, value=0)
 
 # Reset the UC6580: hold nRESET LOW for 100ms, release
 gnss_rst = machine.Pin(GNSS_RST, machine.Pin.OUT, value=1)

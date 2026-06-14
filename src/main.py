@@ -50,10 +50,10 @@ tft = ST7735S(spi,
               cs=Pin(TFT_CS, Pin.OUT, value=1),
               dc=Pin(TFT_RS, Pin.OUT, value=0),
               rst=Pin(TFT_RST, Pin.OUT, value=1),
-              bl=Pin(TFT_BL, Pin.OUT, value=1),
+              bl=None,
               width=80, height=160,
               xstart=26, ystart=0, rotation=0)
-backlight = Pin(TFT_BL, Pin.OUT, value=0)  # active low: 0 = ON
+backlight = Pin(TFT_BL, Pin.OUT, value=0)  # active low: 0 = ON (driver no longer manages BL)
 
 # ---- 3) Reset the UC6580 --------------------------------------------------
 gnss_rst = Pin(GNSS_RST, Pin.OUT, value=1)
