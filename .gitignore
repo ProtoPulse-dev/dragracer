@@ -1,0 +1,29 @@
+# Python / editor
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.venv/
+.env
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MicroPython / serial
+.mpy*
+*.mpy
+
+# Firmware build artifacts (prebuilt binaries are tracked in firmware/)
+build/
+mp-build/
+
+# Logs / local data
+runs.csv
+config.json
+*.log
